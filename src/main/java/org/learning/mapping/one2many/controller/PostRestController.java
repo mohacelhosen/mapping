@@ -20,4 +20,10 @@ public class PostRestController {
         Post savedPost = postService.savePost(post);
         return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
     }
+
+    @GetMapping("/{postId}")
+    public ResponseEntity<Post> savePost(@PathVariable Long postId) {
+        Post savedPost = postService.getPostById(postId);
+        return new ResponseEntity<>(savedPost, HttpStatus.OK);
+    }
 }
